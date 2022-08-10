@@ -45,16 +45,25 @@ const Navbar = () => {
             <Link to="/Support">Support</Link>
           </li>
         </ul>
-        <Button onClick={handleLogout}>LOGOUT</Button>
+        <Button onClick={handleLogout}>logout</Button>
         <div className="hamburger" onClick={handleClick}>
           {click ? (
-            <FaTimes size={30} style={{ color: "#535252" }} />
+            <FaTimes size={30} color="#535252" style={{ color: "#535252" }} />
           ) : (
-            <FaBars size={30} style={{ color: "#535252" }} />
+            <FaBars size={30} color="#535252" style={{ color: "#535252" }} />
           )}
         </div>
       </div>
     );
-  } else return <div></div>;
+  } else
+    return (
+      <div
+        style={{
+          height: "50px",
+        }}
+      >
+        <h2 className="text-center mb-4">Log In Page</h2>
+      </div>
+    );
 };
 export default Navbar;
