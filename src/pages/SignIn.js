@@ -38,7 +38,8 @@ export default function SignIn() {
         width: "100vw",
         height: "100vh",
         backdropFilter: "blur(5px)",
-        backgroundColor: "rgba(0,0,0,0.5)",
+        backgroundColor: "#f5f5f5",
+        paddingTop: "10vh",
       }}
       className="sign-in"
     >
@@ -48,13 +49,13 @@ export default function SignIn() {
           width: "30rem",
           margin: "0 auto",
           float: "none",
-          marginTop: "100px",
         }}
       >
         <Card.Header
           style={{
             justifyContent: "center",
             display: "flex",
+            width: "100%",
           }}
         >
           <Card.Img
@@ -81,7 +82,11 @@ export default function SignIn() {
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
             <Button
-              style={{ padding: "5px", marginTop: "20px" }}
+              style={{
+                padding: "5px",
+                marginTop: "20px",
+                backgroundColor: "#cc2c2c",
+              }}
               disabled={loading}
               className="w-100"
               type="submit"

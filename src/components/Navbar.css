@@ -1,16 +1,21 @@
 .navbar {
   width: 100%;
-  height: 100px;
+  height: 105px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  /* padding-bottom: 4rem; */
   background-color: var(--white);
   color: #cc2c2c;
+  border-bottom: #cc2c2c solid 1px;
+  margin-bottom: 1.5rem;
+  background-color: darkgrey;
 }
 
 .navbar img {
-  width: 88px;
+  width: 80px;
+  top: 1rem;
 }
 
 .nav-menu {
@@ -19,6 +24,7 @@
 
 .nav-item {
   padding: 1rem;
+  color: #cc2c2c;
 }
 .hamburger {
   display: none;

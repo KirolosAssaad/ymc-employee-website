@@ -9,7 +9,14 @@ import PrivateRoute from "./components/PrivateRoute";
 import { AuthProvider } from "./contexts/AuthContext";
 function App() {
   return (
-    <div>
+    <div
+      style={{
+        flex: 1,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <AuthProvider>
         <Navbar />
         <Switch>
