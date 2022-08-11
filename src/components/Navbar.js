@@ -7,22 +7,33 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import { useHistory } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
+import { useLang } from "../contexts/langContext";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
+  const { locale, selectLang } = useLang();
   const history = useHistory();
 
   async function handleLogout() {
     setError("");
     try {
       await logout();
-      history.push("/");
+      history.push("/login");
     } catch {
       setError("Failed to log out");
       console.log(error);
+    }
+  }
+
+  function handleLangChange() {
+    if (locale === "ar-EG") {
+      selectLang("en-US");
+    } else {
+      selectLang("ar-EG");
     }
   }
 
@@ -47,7 +58,7 @@ const Navbar = () => {
               className="nav-link"
               to="/Home"
             >
-              Home
+              <FormattedMessage id="home" />
             </Link>
           </li>
           <li className="nav-item">
@@ -56,7 +67,7 @@ const Navbar = () => {
               className="nav-link"
               to="/PriceOfferings"
             >
-              Price offerings
+              <FormattedMessage id="priceOfferings" />
             </Link>
           </li>
           <li className="nav-item">
@@ -65,7 +76,7 @@ const Navbar = () => {
               className="nav-link"
               to="/Archive"
             >
-              Archive
+              <FormattedMessage id="archive" />
             </Link>
           </li>
           <li className="nav-item">
@@ -74,7 +85,7 @@ const Navbar = () => {
               className="nav-link"
               to="/Support"
             >
-              Support
+              <FormattedMessage id="support" />
             </Link>
           </li>
           <Button
@@ -87,7 +98,20 @@ const Navbar = () => {
             }}
             onClick={handleLogout}
           >
-            logout
+            <FormattedMessage id="logout" />
+          </Button>
+          <Button
+            class="btn btn-primary btn-sm"
+            style={{
+              backgroundColor: "#cc2c2c",
+              borderColor: "#cc2c2c",
+              color: "white",
+              backgroundSize: "50%",
+              marginLeft: "10px",
+            }}
+            onClick={handleLangChange}
+          >
+            <FormattedMessage id="lang" />
           </Button>
         </ul>
         <div className="hamburger" onClick={handleClick}>
@@ -106,9 +130,25 @@ const Navbar = () => {
           justifyContent: "center",
           display: "flex",
           paddingTop: "1rem",
+          // juutifyContent: "space-between",
         }}
       >
-        <h2 className="text-center mb-4">Log In Page</h2>
+        <h2 className="text-center mb-4">
+          <FormattedMessage id="login" />
+        </h2>
+        <Button
+          class="btn btn-primary btn-sm"
+          style={{
+            backgroundColor: "#cc2c2c",
+            borderColor: "#cc2c2c",
+            color: "white",
+            backgroundSize: "50%",
+            marginLeft: "10px",
+          }}
+          onClick={handleLangChange}
+        >
+          <FormattedMessage id="lang" />
+        </Button>
       </div>
     );
   }

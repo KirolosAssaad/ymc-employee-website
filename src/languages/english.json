@@ -1,0 +1,22 @@
+{
+  "home": "Home",
+  "about": "About",
+  "contact": "Contact",
+  "login": "Login",
+  "register": "Register",
+  "logout": "Logout",
+  "profile": "Profile",
+  "settings": "Settings",
+  "search": "Search",
+  "search_placeholder": "Search",
+  "search_results": "Search results",
+  "search_results_placeholder": "Search results",
+  "search_results_empty": "No results found",
+  "priceOfferings": "Price Offerings",
+  "archive": "Archive",
+  "support": "Support",
+  "lang": "En",
+  "email": "Email",
+  "password": "Password",
+  "loginFailed": "Failed to log in"
+}
