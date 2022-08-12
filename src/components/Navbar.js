@@ -56,7 +56,7 @@ const Navbar = () => {
             <Link
               // style={{ paddingTop: "0.4rem" }}
               className="nav-link"
-              to="/Home"
+              to="/"
             >
               <FormattedMessage id="home" />
             </Link>

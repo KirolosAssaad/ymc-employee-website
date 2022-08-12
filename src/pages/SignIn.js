@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import React, { useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
@@ -20,7 +20,7 @@ export default function SignIn() {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/Home");
+      history.push("/");
     } catch {
       setError("Failed to log in");
     }
