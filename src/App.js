@@ -21,11 +21,15 @@ function App() {
       <AuthProvider>
         <Navbar />
         <Switch>
-          <BaseRoute path="/login" component={SignIn} />
-          <PrivateRoute path="/" component={Home} />
-          <PrivateRoute path="/PriceOfferings" component={PriceOfferings} />
-          <PrivateRoute path="/Archive" component={Archive} />
-          <PrivateRoute path="/Support" component={Support} />
+          <BaseRoute exact path="/login" component={SignIn} />
+          <PrivateRoute exact path="/" component={Home} />
+          <PrivateRoute
+            exact
+            path="/PriceOfferings"
+            component={PriceOfferings}
+          />
+          <PrivateRoute exact path="/Archive" component={Archive} />
+          <PrivateRoute exact path="/Support" component={Support} />
         </Switch>
       </AuthProvider>
     </div>
