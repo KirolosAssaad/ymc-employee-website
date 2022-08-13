@@ -9,6 +9,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import { useLang } from "../contexts/langContext";
+import { useLoading } from "../contexts/loadingContext";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -16,6 +17,7 @@ const Navbar = () => {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const { locale, selectLang } = useLang();
+  const { loading } = useLoading();
   const history = useHistory();
 
   async function handleLogout() {
@@ -39,7 +41,18 @@ const Navbar = () => {
 
   if (currentUser)
     return (
-      <div className="navbar">
+      <div
+        className="navbar"
+        style={
+          loading
+            ? {
+                backdropFilter: "blur(5px)",
+                backgroundColor: "#fdfcf4",
+                opacity: "0.8",
+              }
+            : {}
+        }
+      >
         <div className="logo">
           <img
             style={{
@@ -49,6 +62,9 @@ const Navbar = () => {
             }}
             src={Logo}
             alt="logo"
+            onClick={() => {
+              history.push("/");
+            }}
           />
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
@@ -126,12 +142,24 @@ const Navbar = () => {
   else {
     return (
       <div
-        style={{
-          justifyContent: "center",
-          display: "flex",
-          paddingTop: "1rem",
-          // juutifyContent: "space-between",
-        }}
+        style={
+          loading
+            ? {
+                backdropFilter: "blur(5px)",
+                backgroundColor: "#fdfcf4",
+                opacity: "0.8",
+                pointerEvents: "none",
+                justifyContent: "center",
+                display: "flex",
+                paddingTop: "1rem",
+              }
+            : {
+                justifyContent: "center",
+                display: "flex",
+                paddingTop: "1rem",
+                pointerEvents: "all",
+              }
+        }
       >
         <h2 className="text-center mb-4">
           <FormattedMessage id="login" />

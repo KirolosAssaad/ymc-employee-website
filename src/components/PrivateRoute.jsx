@@ -9,7 +9,7 @@ function PrivateRoute({ component: Component, ...rest }) {
     <Route
       {...rest}
       render={(props) => {
-        console.log(currentUser);
+        // console.log(currentUser);
         return currentUser ? (
           <Component {...props} />
         ) : (
@@ -27,7 +27,7 @@ function BaseRoute({ component: Component, ...rest }) {
     <Route
       {...rest}
       render={(props) => {
-        console.log(currentUser);
+        // console.log(currentUser);
         return currentUser ? <Redirect to="/" /> : <Component {...props} />;
       }}
     ></Route>

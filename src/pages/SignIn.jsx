@@ -4,15 +4,18 @@ import { FormattedMessage } from "react-intl";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import { useHistory } from "react-router-dom";
+import { useLoading } from "../contexts/loadingContext";
+import { LoadinScreen } from "../components/loadingScreen";
 
 export default function SignIn() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const { login } = useAuth();
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
+  const { loading, setLoading } = useLoading();
   const history = useHistory();
-
+  // setLoading(true);
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -27,7 +30,6 @@ export default function SignIn() {
 
     setLoading(false);
   }
-
   return (
     <div
       style={{
@@ -43,6 +45,8 @@ export default function SignIn() {
       }}
       className="sign-in"
     >
+      {/* {!loading ? <LoadinScreen /> : null} */}
+      {loading && <LoadinScreen />}
       <Card
         border="secondary"
         style={{

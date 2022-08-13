@@ -7,6 +7,7 @@ import Archive from "./pages/Archive";
 import Support from "./pages/Support";
 import { BaseRoute, PrivateRoute } from "./components/PrivateRoute";
 import { AuthProvider } from "./contexts/AuthContext";
+import { LoadingProvider } from "./contexts/loadingContext";
 
 function App() {
   return (
@@ -19,18 +20,20 @@ function App() {
       }}
     >
       <AuthProvider>
-        <Navbar />
-        <Switch>
-          <BaseRoute exact path="/login" component={SignIn} />
-          <PrivateRoute exact path="/" component={Home} />
-          <PrivateRoute
-            exact
-            path="/PriceOfferings"
-            component={PriceOfferings}
-          />
-          <PrivateRoute exact path="/Archive" component={Archive} />
-          <PrivateRoute exact path="/Support" component={Support} />
-        </Switch>
+        <LoadingProvider>
+          <Navbar />
+          <Switch>
+            <BaseRoute exact path="/login" component={SignIn} />
+            <PrivateRoute exact path="/" component={Home} />
+            <PrivateRoute
+              exact
+              path="/PriceOfferings"
+              component={PriceOfferings}
+            />
+            <PrivateRoute exact path="/Archive" component={Archive} />
+            <PrivateRoute exact path="/Support" component={Support} />
+          </Switch>
+        </LoadingProvider>
       </AuthProvider>
     </div>
   );
