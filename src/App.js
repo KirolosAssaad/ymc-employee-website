@@ -8,8 +8,11 @@ import Support from "./pages/Support";
 import { BaseRoute, PrivateRoute } from "./components/PrivateRoute";
 import { AuthProvider } from "./contexts/AuthContext";
 import { LoadingProvider } from "./contexts/loadingContext";
+import { Button } from "react-bootstrap";
 
 function App() {
+
+
   return (
     <div
       style={{
