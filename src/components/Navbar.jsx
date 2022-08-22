@@ -32,6 +32,7 @@ const Navbar = () => {
   }
 
   function handleLangChange() {
+
     if (locale === "ar-EG") {
       selectLang("en-US");
     } else {
@@ -153,7 +154,7 @@ const Navbar = () => {
                 display: "flex",
                 paddingTop: "1rem",
               }
-            : {
+            :{
                 justifyContent: "center",
                 display: "flex",
                 paddingTop: "1rem",

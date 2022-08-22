@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
@@ -8,10 +9,19 @@ import Support from "./pages/Support";
 import { BaseRoute, PrivateRoute } from "./components/PrivateRoute";
 import { AuthProvider } from "./contexts/AuthContext";
 import { LoadingProvider } from "./contexts/loadingContext";
-import { Button } from "react-bootstrap";
+import { useLang } from "./contexts/langContext";
 
 function App() {
-
+  const {selectLang} = useLang();
+useEffect(() => {
+  console.log(localStorage.getItem("locale"));
+  if (localStorage.getItem("locale") === undefined) {
+    localStorage.setItem("locale", "ar-EG");
+    selectLang("ar-EG");
+  } else {
+    selectLang(localStorage.getItem("locale"));
+  }
+}, [selectLang]);
 
   return (
     <div
