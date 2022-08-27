@@ -21,5 +21,8 @@
   "loginFailed": "Failed to log in",
   "table.name": "Name",
   "table.email": "Email",
-  "table.id": "ID"
+  "table.id": "ID",
+  "client": "Client",
+  "oldClients": "Old Clients",
+  "newClients": "New Clients"
 }

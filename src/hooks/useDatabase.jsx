@@ -1,6 +1,7 @@
 import { db } from "../firebase";
 
 export function insert(collection, data) {
+  
   return new Promise((resolve, reject) => {
     db.collection(collection).add(data, (err, result) => {
       if (err) {
@@ -9,18 +10,20 @@ export function insert(collection, data) {
         resolve(result);
       }
     });
-  });
+  }
+  )
 }
 
-
-export function get(collection, data) {
+export function update(collection, doc, data) {
   return new Promise((resolve, reject) => {
-    db.collection(collection).get(data, (err, result) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(result);
-      }
-    });
+    db.collection(collection).doc(doc).update(data, (err, result) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      });
   });
 }
+
+

@@ -19,6 +19,7 @@
     "react-intl": "^6.0.5",
     "react-router-dom": "^5.3.3",
     "react-scripts": "^5.0.1",
+    "react-select": "^5.4.0",
     "style-sheet": "^4.0.4",
     "web-vitals": "^2.1.4"
   },

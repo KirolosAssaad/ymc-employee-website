@@ -5,7 +5,7 @@ import { FormattedMessage } from "react-intl";
 import { useHistory } from "react-router-dom";
 
 export default function Home() {
-  const { loading, setLoading } = useLoading();
+  const { loading } = useLoading();
   // setLoading(true);
   const history = useHistory();
   const handleClick = (path) => {
@@ -14,14 +14,25 @@ export default function Home() {
 
   return (
     <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "flex-start",
-        backgroundColor: "black",
-        height: "100vh",
-        padding: "0.5rem",
-      }}
+      style={
+        localStorage.getItem("locale") === "ar-EG"
+          ? {
+              display: "flex",
+              flexDirection: "row",
+              direction: "rtl",
+              alignItems: "flex-start",
+              height: "100vh",
+              padding: "0.5rem",
+            }
+          : {
+              display: "flex",
+              flexDirection: "row",
+              direction: "ltr",
+              alignItems: "flex-start",
+              height: "100vh",
+              padding: "0.5rem",
+            }
+      }
     >
       {loading && <LoadinScreen />}
       <Button

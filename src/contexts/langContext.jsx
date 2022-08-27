@@ -20,19 +20,24 @@ export function useLang() {
 // export const useLang = () => useContext(langContext);
 
 export const LangProvider = ({ children }) => {
-  const [locale, setLocale] = useState("en-US");
+  const [locale, setLocale] = useState("ar-EG");
   const [messages, setMessage] = useState(lang);
 
   function selectLang(messages) {
     const newLocale = messages;
     // console.log(" new locale", newLocale);
-    localStorage.setItem("locale", newLocale);
     setLocale(newLocale);
-
+    
     if (newLocale === "ar-EG") {
+      localStorage.setItem("locale", "ar-EG");
       setMessage(Arabic);
-    } else {
+    } else if (newLocale === "en-US") {
+      localStorage.setItem("locale", "en-US");
       setMessage(English);
+    }
+    else{
+      localStorage.setItem("locale", "ar-EG");
+      setMessage(Arabic);
     }
   }
 
