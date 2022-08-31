@@ -9,9 +9,10 @@ function useApi(apiFunc, handleResponse) {
   const request = async (...args) => {
     setLoading(true);
     try {
-      let result = await apiFunc(...args);
+      let result = await apiFunc(...args)
       if (handleResponse !== undefined) result = handleResponse(result);
       setData(result);
+      // console.log(result);
     } catch (err) {
       setError(err);
       setFailedToLoad(false);

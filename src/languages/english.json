@@ -24,5 +24,15 @@
   "table.id": "ID",
   "client": "Client",
   "oldClients": "Old Clients",
-  "newClients": "New Clients"
+  "newClients": "New Clients",
+  "addNewClients": "Add New Clients",
+  "removeChoice": "Remove Choice",
+  "clientName": "Client Name",
+  "clientContactName": "Client Contact Name",
+  "clientContactNumber": "Client Contact Number",
+  "clientIndustry": "Client Industry",
+  "clientAddress": "Client Address",
+  "addNewClient": "Add New Client",
+  "cancel": "Cancel",
+  "newClientAdded": "New Client Added"
 }

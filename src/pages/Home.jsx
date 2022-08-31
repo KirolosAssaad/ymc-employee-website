@@ -3,7 +3,6 @@ import { LoadinScreen } from "../components/loadingScreen";
 import { Button } from "react-bootstrap";
 import { FormattedMessage } from "react-intl";
 import { useHistory } from "react-router-dom";
-
 export default function Home() {
   const { loading } = useLoading();
   // setLoading(true);
@@ -11,6 +10,7 @@ export default function Home() {
   const handleClick = (path) => {
     history.push(path);
   };
+
 
   return (
     <div

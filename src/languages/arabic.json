@@ -22,5 +22,15 @@
   "table.email": "البريد الإلكتروني",
   "client": "العميل",
   "oldClients": "العملاء القداميين",
-  "newClients": "العملاء الجدد"
+  "newClients": "العملاء الجدد",
+  "addNewClients": "إضافة عميل جديد",
+  "removeChoice": "حذف الخيار",
+  "clientName": "اسم العميل",
+  "clientContactName": "اسم الجهة الاتصال",
+  "clientContactNumber": "رقم الجهة الاتصال",
+  "clientIndustry": "الصناعة",
+  "clientAddress": "العنوان",
+  "addNewClient": "إضافة عميل جديد",
+  "cancel": "إلغاء",
+  "newClientAdded": "تمت إضافة العميل بنجاح"
 }
